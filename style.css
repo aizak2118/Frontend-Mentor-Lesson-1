@@ -1,0 +1,373 @@
+@font-face {
+  font-family: "Roboto";
+  src: local("Roboto Regular"),
+    url("./assets/fonts/Roboto-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: local("Roboto Bold"),
+    url("./assets/fonts/Roboto-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+:root {
+  /* Primary Color */
+  --vermellion: #ff6155;
+  --light-vermellion: rgba(255, 97, 85, 0.7);
+  /* Neutral */
+  --dark-navy: #242742;
+  --pale-navy: #36384d;
+  --grey-25: rgba(25, 24, 43, 0.25);
+  --palceholder-grey: #9a9ca7;
+  --gradient: linear-gradient(#ff6a3a, #ff527b);
+  --box-shadow: rgba(0, 0, 0, 0.25);
+  --active-btn-shadow: rgba(255, 97, 85, 0.5);
+  --error-background: rgba(255, 98, 87, 0.2);
+  --white: #fff;
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 4rem;
+  font-size: 1.6rem;
+  background-color: var(--pale-navy);
+}
+
+/* Sign Up Card */
+.signup-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2.4rem;
+  max-width: 92.8rem;
+  max-height: min-content;
+  border-radius: 3.6rem;
+  background-color: var(--white);
+  box-shadow: 0 1.5rem 6rem 0 var(--box-shadow);
+}
+
+.card-content {
+  margin: 4rem;
+  color: var(--dark-navy);
+  max-width: 376px;
+}
+
+picture {
+  height: 100%;
+  margin-left: 2.4rem;
+}
+
+.desktop-img {
+  height: 100%;
+  width: 100%;
+}
+
+.heading {
+  font-size: 5.6rem;
+  color: var(--pale-navy);
+}
+
+.description {
+  line-height: 1.6;
+  margin: 2.4rem 0;
+}
+
+.features {
+  list-style-type: none;
+  margin-bottom: 4rem;
+}
+
+.feature {
+  display: flex;
+  align-items: start;
+  height: min-content;
+  margin-bottom: 1rem;
+}
+
+.icon-list {
+  margin-right: 1.6rem;
+}
+
+form {
+  position: relative;
+}
+
+label,
+input {
+  display: block;
+}
+
+label {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+input,
+.submit-btn {
+  width: 100%;
+  padding: 0 2rem;
+  font-size: 1.6rem;
+  border-radius: 0.8rem;
+  height: 5.6rem;
+}
+
+input {
+  margin: 0.8rem 0 2.4rem 0;
+  color: var(--dark-navy);
+  border: 0.1rem solid var(--grey-25);
+}
+
+input::placeholder {
+  color: var(--palceholder-grey);
+  font-weight: normal;
+}
+
+input {
+  &.error {
+    &::placeholder {
+      color: var(--light-vermellion);
+    }
+    border-color: transparent;
+  }
+}
+
+input:focus {
+  color: var(--pale-navy);
+  outline: 0.1rem solid var(--pale-navy);
+}
+
+.submit-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  border: none;
+  background-color: var(--dark-navy);
+  cursor: pointer;
+  transition: 0.5s ease-in-out;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loading {
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 50%;
+  border: 0.25rem solid rgba(255, 255, 255, 0.2);
+  border-top-color: rgb(255, 255, 255);
+  animation: spin 1s infinite linear;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .submit-btn:hover,
+  .submit-btn:active {
+    background-image: var(--gradient);
+    transition: all 0.2s ease-in-out;
+    box-shadow: 0 1.6rem 3.2rem 0 var(--active-btn-shadow);
+  }
+}
+
+.button-active {
+  background-image: var(--gradient);
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 1.6rem 3.2rem 0 var(--active-btn-shadow);
+}
+
+.error {
+  font-weight: normal;
+  color: var(--vermellion);
+  background-color: var(--error-background);
+  outline: 0.1rem solid var(--vermellion);
+}
+
+.error-msg-required {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 1.3rem;
+  font-weight: normal;
+  color: var(--vermellion);
+}
+
+.error-msg-email-format {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 1.3rem;
+  font-weight: normal;
+  color: var(--vermellion);
+}
+
+.attribution {
+  margin: 3.6rem auto;
+  text-align: center;
+  color: var(--white);
+  display: flex;
+}
+
+.attribution a {
+  color: var(--vermellion);
+}
+
+/* Success Card */
+.success-card {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 50.4rem;
+  max-height: 52rem;
+  padding: 4.8rem 6.4rem 6.4rem;
+  border-radius: 3.6rem;
+  color: var(--pale-navy);
+  background-color: var(--white);
+  box-shadow: 0 1.5rem 6rem 0 var(--box-shadow);
+}
+
+.success-icon {
+  width: 6.4rem;
+}
+
+.success-heading {
+  font-size: 5.6rem;
+  line-height: 1;
+  color: var(--dark-navy);
+  margin: 4rem 0 2.4rem;
+}
+
+.success-desc {
+  line-height: 1.5;
+}
+
+.success-btn {
+  width: 100%;
+  height: 5.6rem;
+  padding: 0 1.8rem;
+  font-size: 1.6rem;
+  margin-top: 40px;
+  border-radius: 0.8rem;
+  color: var(--white);
+  border: none;
+  background-color: var(--dark-navy);
+  cursor: pointer;
+}
+
+.success-btn:hover,
+.success-btn:active {
+  background-image: var(--gradient);
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 1.6rem 3.2rem 0 var(--active-btn-shadow);
+}
+
+/* Phones */
+@media (max-width: 768px) {
+  /* Sign up card */
+  body {
+    display: block;
+    min-height: 100vh;
+    padding: 0;
+    background-color: var(--white);
+    width: 100%;
+  }
+
+  .signup-card {
+    flex-direction: column-reverse;
+    padding: 0;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .heading {
+    font-size: 4rem;
+  }
+
+  picture {
+    max-width: 100%;
+    width: 100%;
+    margin: 0;
+  }
+
+  .mobile-img {
+    width: 100%;
+  }
+
+  .desktop-img {
+    width: 100%;
+  }
+
+  .card-content {
+    width: 100%;
+    max-width: 100%;
+    padding: 4rem 2.4rem;
+    margin: 0;
+  }
+
+  .attribution {
+    color: var(--pale-navy);
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+    margin: 1.6rem auto;
+  }
+
+  /* Success Card */
+  .success-card {
+    display: hidden;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    height: 100%;
+    padding: 2rem;
+    border-radius: 0;
+    background-color: var(--white);
+    box-shadow: none;
+  }
+
+  .success-icon {
+    margin-top: 14.9rem;
+  }
+
+  .success-heading {
+    font-size: 4rem;
+    margin: 4rem 0 2.4rem 0;
+  }
+
+  .success-desc {
+    margin: 0;
+  }
+
+  .success-btn {
+    margin-top: 26.3rem;
+  }
+}

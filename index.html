@@ -6,27 +6,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
 
   <title>Frontend Mentor | Newsletter sign-up form with success message</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution {
-      font-size: 11px;
-      text-align: center;
-    }
-
-    .attribution a {
-      color: hsl(228, 45%, 44%);
-    }
-  </style>
 </head>
 
 <body>
-
-  <!-- Sign-up form start -->
   <main>
-    <section class="sign-up-card">
+
+    <!-- Sign-up form start -->
+    <section class="signup-card">
       <div class="card-content">
         <h1 class="heading">Stay updated!</h1>
         <p class="description">Join 60,000+ product managers receiving monthly updates on:</p>
@@ -47,15 +36,16 @@
         <form action="#">
           <label for="email">Email address</label>
           <input type="email" class="" name="email" id="email" placeholder="email.company.com" required>
-          <p class="error-msg">Valid email required</p>
+          <p class="error-msg-required">Valid email required</p>
+          <p class="error-msg-email-format">Invalid email address format</p>
           <button class="submit-btn" type="submit">
             Subscribe to monthly newsletter
           </button>
         </form>
       </div>
       <picture>
-        <source class="mobile-img" media="(max-width: 750px)" srcset="./assets/images/illustration-sign-up-mobile.svg">
-        <source class="desktop-img" media="(max-width: 750px)" srcset="./assets/images/illustration-sign-up-desktop.svg">
+        <source class="mobile-img" media="(max-width: 768px)" srcset="./assets/images/illustration-sign-up-mobile.svg">
+        <img class="desktop-img" src="./assets/images/illustration-sign-up-desktop.svg" alt="sign up illustration">
       </picture>
     </section>
     <!-- Sign-up form end -->
@@ -66,21 +56,26 @@
       <h1 class="success-heading">Thanks for subscribing!</h1>
       <p class="success-desc">
         A confirmation email has been sent to
-        <strong class="user-email">ash@loremcompany.com.</strong>
+        <strong class="user-email">ash@loremcompany.com</strong>
         Please open it and click the button inside to confirm your subscription.
       </p>
       <button class="success-btn">Dismiss message</button>
     </section>
     <!-- Success message end -->
+
   </main>
 
   <footer class="attribution">
-    Challenge by
-    <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">
-      Frontend Mentor
-    </a>.
-    Coded by
-    <a href="#">Your Name Here</a>.
+    <p>
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">
+        Frontend Mentor
+      </a>.
+    </p>
+    <p>
+      Coded by
+      <a href="#">Kazuki Ogawa</a>.
+    </p>
   </footer>
 
   <script src="script.js"></script>
